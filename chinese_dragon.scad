@@ -53,17 +53,24 @@ head_points = [
         [5, -9, 42] //7
         ];
 
-
 make_hexahedron(lower_lip_points);
 make_hexahedron(upper_lip_points);
 make_hexahedron(head_points);
 
+translate([240, -10, 130])
+rotate([0, -20, 0])
+rotate([0, -90, 0])
+scale([1.3, 1, 1])
+linear_extrude(height = 250, center = false, convexity = 10, twist = 0, $fn = 100, scale = 1.4)
+translate([10, 0, 0])
+circle(r = 8);
+
+
+/*
 // 上嘴唇
 translate([-21.6, 0, 5.5])
 rotate([-42, 0, 90])
 scale([1, 1.8, 1])
 rotate_extrude(angle = 180, convexity = 10, $fn = 200)
 square(size = [3.2, 3.3]);
-
-
-
+*/
