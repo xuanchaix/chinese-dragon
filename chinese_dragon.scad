@@ -46,7 +46,7 @@ translate([-0.58, 0.14, 23])
 sphere(r = 1.2, $fn = 30);
 }
 
-module main(t){
+module main(){
 // 下嘴唇
 lower_lip_points = [
         [-19, 2.8, 2], //0
@@ -84,7 +84,7 @@ head_points = [
         ];
         
 // 头部
-translate([-$t * 100, 13 * sin(-20 + $t * 720), -18 + 18 * cos($t * 720)])
+translate([-$t * 100, -1 + 13 * sin(-20 + $t * 720), -18 + 18 * cos($t * 720)])
 rotate([0, 0, 20 * sin(90 + 720 * $t)])
 scale([0.9, 0.9, 1])
 translate([3, 0, 0.5])
@@ -191,7 +191,7 @@ make_claw();
 }
 }
 
-main($t);
+main();
 /*
 linear_extrude(height = 6, center = false, convexity = 10, twist = 0, scale = 0, $fn = 30)
 translate([3, 0, 0])
